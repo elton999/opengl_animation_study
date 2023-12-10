@@ -24,9 +24,6 @@
     <ClInclude Include="src\khrplatform.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="src\math\vec3.h">
-      <Filter>Arquivos de Origem</Filter>
-    </ClInclude>
     <ClInclude Include="src\math\vec2.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
@@ -34,6 +31,9 @@
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="src\math\mat4.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\vec3.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
   </ItemGroup>
@@ -44,10 +44,10 @@
     <ClCompile Include="src\glad.c">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClCompile>
-    <ClCompile Include="src\math\vec3.cpp">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClCompile>
     <ClCompile Include="src\math\mat4.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\math\vec3.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
