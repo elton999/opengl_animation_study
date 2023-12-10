@@ -54,7 +54,7 @@ vec3 normalized(const vec3& v)
 {
 	float lenSq = v.x * v.x + v.y * v.y + v.z * v.z;
 
-	if (lenSq < VEC3_EPSILON) return;
+	if (lenSq < VEC3_EPSILON) return vec3();
 
 	float invLen = 1.0f / sqrtf(lenSq);
 	return vec3(

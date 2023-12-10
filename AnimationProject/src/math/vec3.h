@@ -38,6 +38,6 @@ vec3 lerp(const vec3& s, const vec3& e, float t);
 vec3 slerp(const vec3& s, const vec3& e, float t);
 vec3 nlerp(const vec3 &s, const vec3 &e, float t);
 bool operator==(const vec3& l, const vec3& r);
-bool operator!=(const vec3 &l, const vec3 &r)
+bool operator!=(const vec3& l, const vec3& r);
 
 #endif // ! _H_VEC3_

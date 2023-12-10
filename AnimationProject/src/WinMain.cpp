@@ -6,7 +6,6 @@
 #define WIN32_EXTRA_LEAN
 
 #include "glad.h"
-#undef APIENTRY
 #include <windows.h>
 #include <iostream>
 #include "Application.h"
