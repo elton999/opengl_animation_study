@@ -36,6 +36,9 @@
     <ClInclude Include="src\math\vec3.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="src\math\quat.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\WinMain.cpp">
@@ -48,6 +51,9 @@
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="src\math\vec3.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\math\quat.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>

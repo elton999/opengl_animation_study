@@ -158,11 +158,6 @@ quat operator*(const quat& Q1, const quat& Q2)
 	return result;
 }
 
-vec3 operator*(const quat& q, const vec3& v) 
-{
-	return q.vector * 2.0f * dot(q.vector, v) + v * (q.scalar * q.scalar - dot(q.vector, q.vector)) + cross(q.vector, v) * 2.0f * q.scalar;
-}
-
 vec3 operator*(const quat& q, const vec3& v)
 {
 	return q.vector * 2.0f * dot(q.vector, v) + 
