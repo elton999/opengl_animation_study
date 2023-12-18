@@ -128,6 +128,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Application.h" />
+    <ClInclude Include="src\Attribute.h" />
     <ClInclude Include="src\glad.h" />
     <ClInclude Include="src\khrplatform.h" />
     <ClInclude Include="src\math\mat4.h" />
@@ -139,6 +140,7 @@
     <ClInclude Include="src\Shader.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Attribute.cpp" />
     <ClCompile Include="src\glad.c" />
     <ClCompile Include="src\math\mat4.cpp" />
     <ClCompile Include="src\math\quat.cpp" />
