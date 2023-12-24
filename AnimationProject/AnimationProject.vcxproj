@@ -140,6 +140,7 @@
     <ClInclude Include="src\math\vec3.h" />
     <ClInclude Include="src\math\vec4.h" />
     <ClInclude Include="src\Shader.h" />
+    <ClInclude Include="src\stb_image.h" />
     <ClInclude Include="src\Uniform.h" />
   </ItemGroup>
   <ItemGroup>
