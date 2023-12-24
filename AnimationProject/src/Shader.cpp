@@ -158,7 +158,7 @@ void Shader::PopulateUniforms()
 				while (true)
 				{
 					memset(testName, 0, sizeof(char) * 256);
-					sprintf(testName, "%s[%d]", uniformName.c_str(), uniformIndex++);
+					sprintf_s(testName, "%s[%d]", uniformName.c_str(), uniformIndex++);
 
 					int uniformLocalization = glGetUniformLocation(mHandle, testName);
 					if (uniformLocalization < 0)

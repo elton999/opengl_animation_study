@@ -1,10 +1,9 @@
 #include "Attribute.h"
-#include <stddef.h>
+#include "glad.h"
 #include "math/vec2.h"
 #include "math/vec3.h"
 #include "math/vec4.h"
 #include "math/quat.h"
-#include "glad.h"
 
 template Attribute<int>;
 template Attribute<float>;
@@ -15,39 +14,39 @@ template Attribute<ivec4>;
 template Attribute<quat>;
 
 template<typename T>
-Attribute<T>::Attribute()
-{
+Attribute<T>::Attribute() {
 	glGenBuffers(1, &mHandle);
 	mCount = 0;
 }
 
 template<typename T>
-Attribute<T>::~Attribute()
-{
+Attribute<T>::~Attribute() {
 	glDeleteBuffers(1, &mHandle);
 }
 
 template<typename T>
-unsigned int Attribute<T>::Count()
-{
+unsigned int Attribute<T>::Count() {
 	return mCount;
 }
 
 template<typename T>
-unsigned int Attribute<T>::GetHandle()
-{
+unsigned int Attribute<T>::GetHandle() {
 	return mHandle;
 }
 
 template<typename T>
-void Attribute<T>::Set(T* inputArray, unsigned int arrayLenght)
-{
-	mCount = arrayLenght;
+void Attribute<T>::Set(T* inputArray, unsigned int arrayLength) {
+	mCount = arrayLength;
 	unsigned int size = sizeof(T);
 
 	glBindBuffer(GL_ARRAY_BUFFER, mHandle);
-	glBufferData(GL_ARRAY_BUFFER, size * mCount, inputArray, GL_STREAM_DRAW, glBindBuffer(GL_ARRAY_BUFFER, 0));
+	glBufferData(GL_ARRAY_BUFFER, size * mCount, inputArray, GL_STREAM_DRAW);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
+}
+
+template<typename T>
+void Attribute<T>::Set(std::vector<T>& input) {
+	Set(&input[0], (unsigned int)input.size());
 }
 
 template<>
