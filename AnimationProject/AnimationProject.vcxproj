@@ -132,6 +132,7 @@
     <ClInclude Include="src\cgltf.h" />
     <ClInclude Include="src\Draw.h" />
     <ClInclude Include="src\glad.h" />
+    <ClInclude Include="src\GLTFLoader.h" />
     <ClInclude Include="src\IndexBuffer.h" />
     <ClInclude Include="src\khrplatform.h" />
     <ClInclude Include="src\math\mat4.h" />
@@ -150,6 +151,7 @@
     <ClCompile Include="src\cgltf.c" />
     <ClCompile Include="src\Draw.cpp" />
     <ClCompile Include="src\glad.c" />
+    <ClCompile Include="src\GLTFLoader.cpp" />
     <ClCompile Include="src\IndexBuffer.cpp" />
     <ClCompile Include="src\math\mat4.cpp" />
     <ClCompile Include="src\math\quat.cpp" />
