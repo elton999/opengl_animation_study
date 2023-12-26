@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Arquivos de Recurso\shaders">
+      <UniqueIdentifier>{69520f77-1c6e-4503-a782-aa1c4ac456d1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Application.h">
@@ -104,5 +107,13 @@
     <ClCompile Include="src\Texture.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="src\shaders\lit.frag">
+      <Filter>Arquivos de Recurso\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\shaders\static.vert">
+      <Filter>Arquivos de Recurso\shaders</Filter>
+    </CopyFileToFolders>
   </ItemGroup>
 </Project>
