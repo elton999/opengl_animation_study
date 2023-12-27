@@ -127,6 +127,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\animation\Frame.h" />
+    <ClInclude Include="src\animation\interpolation.h" />
+    <ClInclude Include="src\animation\Track.h" />
     <ClInclude Include="src\Application.h" />
     <ClInclude Include="src\Attribute.h" />
     <ClInclude Include="src\cgltf.h" />
@@ -147,6 +150,7 @@
     <ClInclude Include="src\Uniform.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\animation\Track.cpp" />
     <ClCompile Include="src\Attribute.cpp" />
     <ClCompile Include="src\cgltf.c" />
     <ClCompile Include="src\Draw.cpp" />
