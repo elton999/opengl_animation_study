@@ -130,6 +130,7 @@
     <ClInclude Include="src\animation\Frame.h" />
     <ClInclude Include="src\animation\interpolation.h" />
     <ClInclude Include="src\animation\Track.h" />
+    <ClInclude Include="src\animation\TransformTrack.h" />
     <ClInclude Include="src\Application.h" />
     <ClInclude Include="src\Attribute.h" />
     <ClInclude Include="src\cgltf.h" />
@@ -151,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\animation\Track.cpp" />
+    <ClCompile Include="src\animation\TransformTrack.cpp" />
     <ClCompile Include="src\Attribute.cpp" />
     <ClCompile Include="src\cgltf.c" />
     <ClCompile Include="src\Draw.cpp" />
