@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\animation\Clip.h" />
     <ClInclude Include="src\animation\Frame.h" />
     <ClInclude Include="src\animation\interpolation.h" />
     <ClInclude Include="src\animation\Pose.h" />
@@ -152,6 +153,7 @@
     <ClInclude Include="src\Uniform.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\animation\Clip.cpp" />
     <ClCompile Include="src\animation\Pose.cpp" />
     <ClCompile Include="src\animation\Track.cpp" />
     <ClCompile Include="src\animation\TransformTrack.cpp" />
