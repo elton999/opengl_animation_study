@@ -224,6 +224,15 @@ unsigned int Shader::GetHandle()
 	return mHandle;
 }
 
+unsigned int Shader::GetAttribute(const std::string& name) {
+	std::map<std::string, unsigned int>::iterator it = mAttributes.find(name);
+	if (it == mAttributes.end()) {
+		std::cout << "Retrieving bad attribute index: " << name << "\n";
+		return 0;
+	}
+	return it->second;
+}
+
 unsigned int Shader::GetUniform(const std::string& name)
 {
 	std::map<std::string, unsigned int>::iterator it = mUniforms.find(name);

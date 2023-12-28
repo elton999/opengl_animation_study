@@ -90,6 +90,12 @@
     <ClInclude Include="src\animation\Clip.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="src\DebugDraw.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Sample.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\WinMain.cpp">
@@ -149,6 +155,12 @@
     <ClCompile Include="src\animation\Clip.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="src\DebugDraw.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Sample.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="src\shaders\lit.frag">
@@ -157,5 +169,6 @@
     <CopyFileToFolders Include="src\shaders\static.vert">
       <Filter>Arquivos de Recurso\shaders</Filter>
     </CopyFileToFolders>
+    <CopyFileToFolders Include="src\assets\Woman.gltf" />
   </ItemGroup>
 </Project>

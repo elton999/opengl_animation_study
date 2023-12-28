@@ -136,6 +136,7 @@
     <ClInclude Include="src\Application.h" />
     <ClInclude Include="src\Attribute.h" />
     <ClInclude Include="src\cgltf.h" />
+    <ClInclude Include="src\DebugDraw.h" />
     <ClInclude Include="src\Draw.h" />
     <ClInclude Include="src\glad.h" />
     <ClInclude Include="src\GLTFLoader.h" />
@@ -147,6 +148,7 @@
     <ClInclude Include="src\math\vec2.h" />
     <ClInclude Include="src\math\vec3.h" />
     <ClInclude Include="src\math\vec4.h" />
+    <ClInclude Include="src\Sample.h" />
     <ClInclude Include="src\Shader.h" />
     <ClInclude Include="src\stb_image.h" />
     <ClInclude Include="src\Texture.h" />
@@ -159,6 +161,7 @@
     <ClCompile Include="src\animation\TransformTrack.cpp" />
     <ClCompile Include="src\Attribute.cpp" />
     <ClCompile Include="src\cgltf.c" />
+    <ClCompile Include="src\DebugDraw.cpp" />
     <ClCompile Include="src\Draw.cpp" />
     <ClCompile Include="src\glad.c" />
     <ClCompile Include="src\GLTFLoader.cpp" />
@@ -167,6 +170,7 @@
     <ClCompile Include="src\math\quat.cpp" />
     <ClCompile Include="src\math\Transform.cpp" />
     <ClCompile Include="src\math\vec3.cpp" />
+    <ClCompile Include="src\Sample.cpp" />
     <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\stb_image.cpp" />
     <ClCompile Include="src\Texture.cpp" />
@@ -181,6 +185,13 @@
       <FileType>Document</FileType>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="src\assets\Woman.gltf">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+      <FileType>Document</FileType>
     </CopyFileToFolders>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -92,7 +92,7 @@ namespace GLTFHelpers {
 
 } // End of GLTFHelpers
 
-cgltf_data* LoadGLTFFile(const char* path) {
+cgltf_data* LoadGLTFGFFile(const char* path) {
 	cgltf_options options;
 	memset(&options, 0, sizeof(cgltf_options));
 	cgltf_data* data = NULL;
@@ -176,7 +176,7 @@ std::vector<Clip> LoadAnimationClips(cgltf_data* data) {
 			cgltf_node* target = channel.target_node;
 			int nodeId = GLTFHelpers::GetNodeIndex(target, data->nodes, numNodes);
 			if (channel.target_path == cgltf_animation_path_type_translation) {
-				VectorTrack& track = result[i][nodeId].GetPositionTrack();
+				VectorTrack& track = result[i][nodeId].GetPosition();
 				GLTFHelpers::TrackFromChannel<vec3, 3>(track, channel);
 			}
 			else if (channel.target_path == cgltf_animation_path_type_scale) {
