@@ -99,6 +99,9 @@
     <ClInclude Include="src\animation\Skeleton.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+    <ClInclude Include="src\Mesh.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\WinMain.cpp">
@@ -167,6 +170,9 @@
     <ClCompile Include="src\animation\Skeleton.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="src\Mesh.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="src\shaders\lit.frag">
@@ -176,5 +182,11 @@
       <Filter>Arquivos de Recurso\shaders</Filter>
     </CopyFileToFolders>
     <CopyFileToFolders Include="src\assets\Woman.gltf" />
+    <CopyFileToFolders Include="src\shaders\skinned.vert">
+      <Filter>Arquivos de Recurso\shaders</Filter>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="src\assets\Woman.png">
+      <Filter>Arquivos de Recurso</Filter>
+    </CopyFileToFolders>
   </ItemGroup>
 </Project>

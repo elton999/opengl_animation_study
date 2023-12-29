@@ -2,61 +2,55 @@
 #include "glad.h"
 #include <iostream>
 
-static GLenum DrawModeToGLEnum(DrawMode input)
-{
-	switch (input)
-	{
-	case DrawMode::Points:
-		return GL_POINTS;
-		break;
-	case DrawMode::LineStrip:
+static GLenum DrawModeToGLEnum(DrawMode input) {
+	if (input == DrawMode::Points) {
+		return  GL_POINTS;
+	}
+	else if (input == DrawMode::LineStrip) {
 		return GL_LINE_STRIP;
-		break;
-	case DrawMode::LineLoop:
-		return GL_LINE_LOOP;
-		break;
-	case DrawMode::Lines:
-		return GL_LINES;
-		break;
-	case DrawMode::Triangles:
-		return GL_TRIANGLES;
-		break;
-	case DrawMode::TiangleStrip:
-		return GL_TRIANGLE_STRIP;
-		break;
-	case DrawMode::TriangleFan:
-		return GL_TRIANGLE_FAN;
-		break;
+	}
+	else if (input == DrawMode::LineLoop) {
+		return  GL_LINE_LOOP;
+	}
+	else if (input == DrawMode::Lines) {
+		return  GL_LINES;
+	}
+	else if (input == DrawMode::Triangles) {
+		return  GL_TRIANGLES;
+	}
+	else if (input == DrawMode::TriangleStrip) {
+		return  GL_TRIANGLE_STRIP;
+	}
+	else if (input == DrawMode::TriangleFan) {
+		return   GL_TRIANGLE_FAN;
 	}
 
 	std::cout << "DrawModeToGLEnum unreachable code hit\n";
 	return 0;
 }
 
-void Draw(unsigned int vertexCount, DrawMode mode)
-{
+void Draw(unsigned int vertexCount, DrawMode mode) {
 	glDrawArrays(DrawModeToGLEnum(mode), 0, vertexCount);
 }
 
-void Draw(unsigned int vertexCount, DrawMode mode, unsigned int numInstances)
-{
+void DrawInstanced(unsigned int vertexCount, DrawMode mode, unsigned int numInstances) {
 	glDrawArraysInstanced(DrawModeToGLEnum(mode), 0, vertexCount, numInstances);
 }
 
-void Draw(IndexBuffer& inIndexBuffer, DrawMode mode)
-{
+void Draw(IndexBuffer& inIndexBuffer, DrawMode mode) {
 	unsigned int handle = inIndexBuffer.GetHandle();
-	unsigned int numIndicies = inIndexBuffer.Count();
+	unsigned int numIndices = inIndexBuffer.Count();
+
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, handle);
-	glDrawElements(DrawModeToGLEnum(mode), numIndicies, GL_UNSIGNED_INT, 0);
+	glDrawElements(DrawModeToGLEnum(mode), numIndices, GL_UNSIGNED_INT, 0);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }
 
-void DrawInstanced(IndexBuffer& inIndexBuffer, DrawMode mode, unsigned int instanceCount)
-{
+void DrawInstanced(IndexBuffer& inIndexBuffer, DrawMode mode, unsigned int instanceCount) {
 	unsigned int handle = inIndexBuffer.GetHandle();
-	unsigned int numIndicies = inIndexBuffer.Count();
+	unsigned int numIndices = inIndexBuffer.Count();
+
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, handle);
-	glDrawElementsInstanced(DrawModeToGLEnum(mode), numIndicies, GL_UNSIGNED_INT, 0, instanceCount);
+	glDrawElementsInstanced(DrawModeToGLEnum(mode), numIndices, GL_UNSIGNED_INT, 0, instanceCount);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 }
