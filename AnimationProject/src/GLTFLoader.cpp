@@ -193,3 +193,55 @@ std::vector<Clip> LoadAnimationClips(cgltf_data* data) {
 
 	return result;
 }
+
+Pose LoadBindPose(cgltf_data* data)
+{
+	Pose restPose = LoadRestPose(data);
+	unsigned int numBones = restPose.Size();
+
+	std::vector<Transform> worldBindPose(numBones);
+	for (unsigned int i = 0; i < numBones; ++i)
+	{
+		worldBindPose[i] = restPose.GetGlobalTransform(i);
+	}
+
+	unsigned int numSkins = data->skins_count;
+	for (unsigned int i = 0; i < numBones; ++i)
+	{
+		cgltf_skin* skin = &(data->skins[i]);
+		std::vector<float> invBindAccessor;
+		GLTFHelpers::GetScalarValues(invBindAccessor, 16, *skin->inverse_bind_matrices);
+		unsigned int numJoints = skin->joints_count;
+
+		for (int j = 0; j < numJoints; ++j)
+		{
+			float* matrix = &(invBindAccessor[j * 16]);
+			mat4 invBindMatrix = mat4(matrix);
+			mat4 bindMatrix = inverse(invBindMatrix);
+			Transform bindTransform = mat4ToTransform(bindMatrix);
+
+			cgltf_node* jointNode = skin->joints[i];
+			int jointIndex = GLTFHelpers::GetNodeIndex(jointNode, data->nodes, numBones);
+			worldBindPose[jointIndex] = bindTransform;
+		}
+	}
+
+	Pose bindPose = restPose;
+	for (unsigned int i = 0; i < numBones; ++i)
+	{
+		Transform current = worldBindPose[i];
+		int p = bindPose.GetParent(i);
+		if (p >= 0)
+		{
+			Transform parent = worldBindPose[p];
+			current = combine(inverse(parent), current);
+		}
+		bindPose.SetLocalTransform(i, current);
+	}
+	return bindPose;
+}
+
+Skeleton LoadSkeleton(cgltf_data* data)
+{
+	return Skeleton(LoadRestPose(data), LoadBindPose(data), LoadJointNames(data));
+}
